@@ -52,3 +52,11 @@ export default tseslint.config({
   },
 })
 ```
+#sql
+create table public.session_timing (
+  id uuid not null default extensions.uuid_generate_v4 (),
+  start_time timestamp with time zone not null,
+  end_time timestamp with time zone null,
+  duration text null,
+  constraint session_timing_pkey primary key (id)
+) TABLESPACE pg_default;
